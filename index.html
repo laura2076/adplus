@@ -15,7 +15,7 @@
     gtag('config', 'G-2JE7G3R8W1');
   </script>
   <style>
-    /* (기존 스타일 코드 동일) */
+    /* (기존 스타일 코드, 텍스트 선택 가능하도록 수정) */
     body {
       font-family: 'Nanum Gothic', sans-serif;
       background-color: #f4f6f9;
@@ -30,8 +30,9 @@
       border-right: 2px solid #ddd;
       overflow-y: auto;
       background: #ffffff;
-      user-select: none;
-      caret-color: transparent;
+      /* 텍스트 선택 가능하도록 변경 */
+      user-select: text;
+      caret-color: auto;
     }
     #sidebar input {
       user-select: text;
@@ -61,6 +62,8 @@
       border-right: 2px solid #ddd;
       overflow-y: auto;
       background: #ffffff;
+      user-select: text;
+      caret-color: auto;
     }
     .question-display {
       width: 50%;
@@ -72,6 +75,8 @@
       justify-content: flex-start;
       align-items: flex-start;
       height: 100vh;
+      user-select: text;
+      caret-color: auto;
     }
     @media (max-width: 768px) {
       body {
@@ -89,6 +94,8 @@
       padding: 5px;
       font-size: 14px;
       margin-bottom: 5px;
+      user-select: text;
+      caret-color: auto;
     }
     .sidebar-label {
       font-size: 16px;
@@ -96,22 +103,30 @@
       margin-bottom: 10px;
       text-align: left;
       font-weight: bold;
+      user-select: text;
+      caret-color: auto;
     }
     .question-label {
       font-size: 14px;
       font-weight: bold;
       margin-bottom: 10px;
       color: #333;
+      user-select: text;
+      caret-color: auto;
     }
     .tree-node {
       position: relative;
       margin-bottom: 20px;
+      user-select: text;
+      caret-color: auto;
     }
     .tree-node > .faq-item.top-category {
       position: relative;
       z-index: 0;
       background: #546e7a;
       color: #fff;
+      user-select: text;
+      caret-color: auto;
     }
     .tree-children {
       position: relative;
@@ -120,6 +135,8 @@
       overflow: hidden;
       max-height: 0;
       transition: max-height 0.5s ease-out;
+      user-select: text;
+      caret-color: auto;
     }
     .tree-children.open {
       max-height: 1000px;
@@ -130,6 +147,7 @@
       left: 0;
       width: 2px;
       background: #ccc;
+      user-select: none;
     }
     .tree-children > .faq-item::before {
       content: "";
@@ -140,6 +158,7 @@
       width: 20px;
       height: 2px;
       background: #ccc;
+      user-select: none;
     }
     .faq-item {
       position: relative;
@@ -152,6 +171,8 @@
       padding: 10px;
       text-align: left;
       font-weight: bold;
+      user-select: text;
+      caret-color: auto;
     }
     .faq-item:hover {
       background: #e0e0e0;
@@ -181,8 +202,10 @@
     }
     .faq-item.subcategory {
       background: #f1f5fa;
+      user-select: text;
+      caret-color: auto;
     }
-    /* ----- 추가: faq-item subcategory.active 스타일 (faq-item category active expanded와 동일) ----- */
+    /* ----- faq-item subcategory.active 스타일 ----- */
     #sidebar .faq-item.subcategory.active {
       background: #d1d6dc;
       color: #000;
@@ -191,27 +214,37 @@
       font-size: 16px;
       color: #555;
       margin-bottom: 10px;
+      user-select: text;
+      caret-color: auto;
     }
     .selected-question {
       font-size: 22px;
       font-weight: bold;
       color: #007bff;
       margin-bottom: 10px;
+      user-select: text;
+      caret-color: auto;
     }
     .selected-response {
       padding: 15px;
       background: #e3f2fd;
       border-radius: 5px;
       font-size: 15px;
+      user-select: text;
+      caret-color: auto;
     }
     .question-breadcrumb {
       font-size: 12px;
       color: #888;
       margin-bottom: 3px;
+      user-select: text;
+      caret-color: auto;
     }
     .search-container {
       padding-bottom: 10px;
       margin-bottom: 10px;
+      user-select: text;
+      caret-color: auto;
     }
     .search-container input {
       width: calc(100% - 40px);
@@ -221,10 +254,14 @@
       border-radius: 5px;
       display: block;
       margin: 0 auto;
+      user-select: text;
+      caret-color: auto;
     }
     .faq-header {
       display: flex;
       align-items: center;
+      user-select: text;
+      caret-color: auto;
     }
     .info-button {
       width: 24px;
@@ -239,6 +276,7 @@
       cursor: pointer;
       border: none;
       margin-left: 5px;
+      user-select: none;
     }
     .tooltip {
       display: none;
@@ -253,6 +291,8 @@
       font-size: 14px;
       white-space: nowrap;
       z-index: 1000;
+      user-select: text;
+      caret-color: auto;
     }
     .tooltip.show {
       display: block;
@@ -271,11 +311,13 @@
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       z-index: 1000;
+      user-select: none;
     }
     #feedback-icon svg {
       width: 24px;
       height: 24px;
       fill: #fff;
+      user-select: none;
     }
     .modal {
       display: none;
@@ -287,6 +329,8 @@
       height: 100%;
       overflow: auto;
       background-color: rgba(0,0,0,0.4);
+      user-select: text;
+      caret-color: auto;
     }
     .modal-content {
       position: relative;
@@ -299,6 +343,8 @@
       height: 80%;
       border-radius: 10px;
       overflow: hidden;
+      user-select: text;
+      caret-color: auto;
     }
     .modal-close {
       color: #aaa;
@@ -309,12 +355,14 @@
       font-weight: bold;
       cursor: pointer;
       z-index: 1200;
+      user-select: none;
     }
     .modal-close:hover,
     .modal-close:focus {
       color: black;
       text-decoration: none;
       cursor: pointer;
+      user-select: none;
     }
     .modal-title {
       text-align: center;
@@ -322,6 +370,8 @@
       font-weight: bold;
       padding: 20px 0 10px 0;
       border-bottom: 1px solid #ddd;
+      user-select: text;
+      caret-color: auto;
     }
     .iframe-container {
       width: 50%;
@@ -330,39 +380,26 @@
       border: 2px solid transparent;
       border-radius: 5px;
       overflow: hidden;
+      user-select: text;
+      caret-color: auto;
     }
     .image-comment-above, .image-comment-below {
       margin: 10px 0;
+      user-select: text;
+      caret-color: auto;
     }
     .image-comment-above img, .image-comment-below img {
       max-width: 100%;
       height: auto;
       cursor: pointer;
+      user-select: text;
+      caret-color: auto;
     }
     .comment-above, .comment-below {
       margin-top: 5px;
       font-size: 14px;
-    }
-    .faq-item,
-    .faq-item.top-category.active.expanded,
-    .faq-item.scenario.active.expanded,
-    .faq-item.category.active,
-    .faq-item.active,
-    .breadcrumb,
-    .selected-question,
-    .comment-above,
-    .selected-response,
-    .comment-below,
-    .faq-header,
-    .sidebar-label,
-    .question-label,
-    .question-display {
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      caret-color: transparent;
-      outline: none;
+      user-select: text;
+      caret-color: auto;
     }
   </style>
 </head>
@@ -400,13 +437,9 @@
   
   <div class="tooltip" id="tooltip">
     FAQ 용어 정리 (검색이 용이하기 위해 일관된 단어로 검색해주세요.)<br>
-    - 요금 : 금액, 가격, 객단가, 객실가, 단가<br>
-    - 리뷰 : 후기, 이용후기, 평가, 별점<br>
     - 취소 : 중단, 중지, 제외, 철회, 보류, 종료, 해지<br>
-    - 보상 : 리워드, 상품, 선물, 상금, 혜택<br>
+    - 지원금 : 리워드, 상품, 선물, 상금, 혜택<br>
     - 비용 : 단가, 가격, 금액, 판매가, 구매가, 결제가<br>
-    - 단기광고 : 스팟광고, 한달광고<br>
-    - 정기광고 : 플러스상품
   </div>
   
   <div id="feedback-icon" onclick="openFeedbackModal()">
